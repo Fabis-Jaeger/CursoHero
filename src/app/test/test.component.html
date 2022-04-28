@@ -1,0 +1,15 @@
+<app-slide-bar></app-slide-bar>
+<div class="contenedor">
+<h1>Hola Mundo</h1>
+<div>
+  {{ title }}
+</div>
+<div>La suma de 2 y 2 es {{ 2 + 2 }}</div>
+<div>El doble de 4 es {{ duplicar(4) }}</div>
+<input type="file" style="display:none" #file>
+<button mdbBtn type="button" color="primary" mdbWavesEffect  (click)="file.click()">Cargar</button>
+<h1>En cines</h1>
+<app-listado-peliculas [peliculas] = lista and [loading] = loading></app-listado-peliculas>
+<h1>Futuros estrenos </h1>
+<app-listado-peliculas [peliculas]= listafuture and [loading]= load></app-listado-peliculas>
+</div>

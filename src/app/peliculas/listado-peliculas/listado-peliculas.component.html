@@ -1,0 +1,19 @@
+ <div *ngIf="!loading">
+  <img src="http://www.kengurupro.cl/assets/img/general/cargando.gif" />
+</div>
+<div *ngIf="peliculas?.length === 0 && loading">
+  <p style="color:red">No hay peliculas a mostrar</p>
+</div>
+<ng-container *ngIf="peliculas.length > 0 "> 
+  <div *ngFor="let xd of peliculas; let in = index" class="contenedorpelis">
+    <div>Pelicula: {{ in }} {{ xd.titulo }} 
+      <button mdbBtn type="button" color="danger" mdbWavesEffect (click)="Delete(index)">Delete</button>
+    </div>
+    <div>
+      {{ xd.fecha | date: "dd/MMMM/yyyy" | uppercase }}
+    </div>
+    <div>
+      {{ xd.precio | currency }}
+    </div>
+  </div>
+</ng-container>
